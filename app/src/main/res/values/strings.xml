@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">DCAttractions</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="page_title_landmarks">Landmarks</string>
+    <string name="page_title_museums">Museums</string>
+    <string name="page_title_greens">Greens</string>
+    <string name="page_title_shopping_and_dinning">Shopping and Dinning</string>
+    <string name="national_mall">National Mall</string>
+    <string name="washington_dc">Washington, DC</string>
+    <string name="tidal_basin">Tidal Basin</string>
+    <string name="white_house">White House</string>
+    <string name="location_white_house">1600 Pennsylvania Ave NW, Washington, DC 20500</string>
+    <string name="lincoln_memorial">Lincoln Memorial</string>
+    <string name="location_lincoln_memorial">2 Lincoln Memorial Cir NW, Washington, DC 20037</string>
+    <string name="washington_monument">Washington Monument</string>
+    <string name="location_washington_monument">2 15th St NW, Washington, DC 20024</string>
+    <string name="united_states_capitol">United States Capitol</string>
+    <string name="location_capitol">First St SE, Washington, DC 20004</string>
+    <string name="thomas_jefferson_memorial">Thomas Jefferson Memorial</string>
+    <string name="location_thomas_jefferson_memorial">16 E Basin Dr SW, Washington, DC 20242</string>
+    <string name="smithsonian_national_air_and_space_museum">Smithsonian National Air and Space Museum</string>
+    <string name="location_smithsonian_national_air_and_space_museum">600 Independence Ave SW, Washington, DC 20560</string>
+    <string name="smithsonian_national_museum_of_natural_history">Smithsonian National Museum of Natural History</string>
+    <string name="location_smithsonian_national_museum_of_natural_history">10th St. And Constitution Ave. NW, Washington, DC 20560</string>
+    <string name="national_museum_of_african_american_history_and_culture">National Museum of African American History and Culture</string>
+    <string name="location_national_museum_of_african_american_history_and_culture">1400 Constitution Ave NW, Washington, DC 20560</string>
+    <string name="national_gallery_of_art">National Gallery of Art</string>
+    <string name="location_national_gallery_of_art">Constitution Ave NW, Washington, DC 20565</string>
+    <string name="smithsonian_american_art_museum">Smithsonian American Art Museum</string>
+    <string name="location_smithsonian_american_art_museum">F St NW And, 8th St NW, Washington, DC 20004</string>
+    <string name="chinatown">Chinatown</string>
+    <string name="location_chinatown">Massachusetts Ave NW And 5th Street NW, Washington, DC 20001</string>
+    <string name="georgetown">Georgetown</string>
+    <string name="location_georgetown">Washington, DC 20007</string>
+
+
+
+
+
+
+</resources>
