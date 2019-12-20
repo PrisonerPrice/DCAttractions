@@ -14,6 +14,17 @@ public class Place {
     // Longitude
     private double mGeoY;
 
+    private String imageUrl;
+
+    public Place(String mName, String mLocation, int mImageResID, double mGeoX, double mGeoY, String mImageURL) {
+        this.mName = mName;
+        this.mLocation = mLocation;
+        this.mImageResID = mImageResID;
+        this.mGeoX = mGeoX;
+        this.mGeoY = mGeoY;
+        this.imageUrl = mImageURL;
+    }
+
     public Place(String name, String location, int imageResID, double GeoX, double GeoY){
         mName = name;
         mLocation = location;
@@ -33,6 +44,10 @@ public class Place {
     public String getPlaceLocation(){return mLocation;}
 
     public int getPlaceImage(){return mImageResID;}
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
 
     public double getGeoX(){return mGeoX;}
 
