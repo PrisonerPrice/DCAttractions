@@ -5,8 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
@@ -17,9 +19,17 @@ public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdap
 
     private final MyClickListener myClickListener;
 
-    public PlaceRecyclerAdapter(ArrayList<Place> data, MyClickListener myClickListener) {
+    private int backgroundColorResID;
+
+    private Context context;
+
+
+
+    public PlaceRecyclerAdapter(ArrayList<Place> data, MyClickListener myClickListener, int colorId, Context context) {
         this.data = data;
         this.myClickListener = myClickListener;
+        backgroundColorResID = colorId;
+        this.context = context;
     }
 
     @Override
@@ -37,11 +47,13 @@ public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdap
 
     @Override
     public void onBindViewHolder(PlaceViewHolder holder, int position) {
+        int color = ContextCompat.getColor(context,backgroundColorResID);
         if(data != null && data.size() != 0){
             Place place = data.get(position);
             holder.placeImageView.setImageResource(place.getPlaceImage());
             holder.placeLocationTextView.setText(place.getPlaceLocation());
             holder.placeNameTextView.setText(place.getPlaceName());
+            holder.relativeLayout.setBackgroundColor(color);
         } else{
             // need to be implemented
         }
@@ -56,12 +68,15 @@ public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdap
         TextView placeNameTextView;
         TextView placeLocationTextView;
         ImageView placeImageView;
+        RelativeLayout relativeLayout;
 
         public PlaceViewHolder(View itemView) {
             super(itemView);
             placeNameTextView = (TextView) itemView.findViewById(R.id.place_name_text_view);
             placeLocationTextView = (TextView) itemView.findViewById(R.id.place_location_text_view);
             placeImageView = (ImageView) itemView.findViewById(R.id.place_image_view);
+            relativeLayout = (RelativeLayout) itemView.findViewById(R.id.list_item);
+            itemView.setOnClickListener(this);
         }
 
         @Override

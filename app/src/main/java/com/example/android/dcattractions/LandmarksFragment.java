@@ -1,10 +1,14 @@
 package com.example.android.dcattractions;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +21,12 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LandmarksFragment extends Fragment {
+public class LandmarksFragment extends Fragment implements PlaceRecyclerAdapter.MyClickListener {
+
+    private static PlaceRecyclerAdapter placeRecyclerAdapter;
+    private static RecyclerView recyclerView;
+    private Context context;
+    private static final ArrayList<Place> places = new ArrayList<Place>();
 
 
     public LandmarksFragment() {
@@ -29,9 +38,9 @@ public class LandmarksFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        View rootView = inflater.inflate(R.layout.place_list, container, false);
+        context = getActivity();
 
-        final ArrayList<Place> places = new ArrayList<Place>();
+        View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         places.add(new Place(getResources().getString(R.string.white_house),
                 getResources().getString(R.string.location_white_house),
@@ -54,25 +63,25 @@ public class LandmarksFragment extends Fragment {
                 R.drawable.landmarks_thomas_jefferson_memorial,
                 38.881872,-77.036556));
 
-        // Set list color
-        PlaceAdapter adapter = new PlaceAdapter(getActivity(), places, R.color.colorPrimary);
+        placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
+        recyclerView = rootView.findViewById(R.id.recycler_view);
 
-        ListView listView = (ListView) rootView.findViewById(R.id.list);
-        listView.setAdapter(adapter);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                Place place = places.get(position);
-                String geoInformation = "geo:"+ place.getGeoX() + "," + place.getGeoY() + "?q=" + place.getPlaceName();
-                Uri mUri = Uri.parse(geoInformation);
-                Intent mIntent = new Intent(Intent.ACTION_VIEW,mUri);
-                startActivity(mIntent);
-            }
-        });
+        recyclerView.setLayoutManager(gridLayoutManager);
 
-        // Inflate the layout for this fragment
+        recyclerView.setHasFixedSize(true);
+
+        recyclerView.setAdapter(placeRecyclerAdapter);
         return rootView;
     }
 
+    @Override
+    public void onItemClick(int position) {
+        Place place = places.get(position);
+        String geoInformation = "geo:"+ place.getGeoX() + "," + place.getGeoY() + "?q=" + place.getPlaceName();
+        Uri mUri = Uri.parse(geoInformation);
+        Intent mIntent = new Intent(Intent.ACTION_VIEW,mUri);
+        startActivity(mIntent);
+    }
 }

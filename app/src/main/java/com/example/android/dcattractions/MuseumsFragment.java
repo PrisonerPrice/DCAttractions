@@ -27,7 +27,7 @@ public class MuseumsFragment extends Fragment implements PlaceRecyclerAdapter.My
     private static PlaceRecyclerAdapter placeRecyclerAdapter;
     private static RecyclerView recyclerView;
     private Context context;
-
+    private static final ArrayList<Place> places = new ArrayList<Place>();
 
     public MuseumsFragment() {
         // Required empty public constructor
@@ -40,10 +40,7 @@ public class MuseumsFragment extends Fragment implements PlaceRecyclerAdapter.My
 
         context = getActivity();
 
-        //View rootView = inflater.inflate(R.layout.place_list, container, false);
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
-
-        final ArrayList<Place> places = new ArrayList<Place>();
 
         places.add(new Place(getResources().getString(R.string.smithsonian_national_air_and_space_museum),
                 getResources().getString(R.string.location_smithsonian_national_air_and_space_museum),
@@ -65,10 +62,7 @@ public class MuseumsFragment extends Fragment implements PlaceRecyclerAdapter.My
                 getResources().getString(R.string.location_smithsonian_american_art_museum),
                 R.drawable.museums_smithsonian_american_art_museum,38.897393,-77.022946));
 
-        // Set list color
-        //PlaceAdapter adapter = new PlaceAdapter(getActivity(), places, R.color.colorPrimary);
-
-        placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this);
+        placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
         recyclerView = rootView.findViewById(R.id.recycler_view);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(context, 1);
@@ -76,28 +70,17 @@ public class MuseumsFragment extends Fragment implements PlaceRecyclerAdapter.My
         recyclerView.setLayoutManager(gridLayoutManager);
 
         recyclerView.setHasFixedSize(true);
-        
-        recyclerView.setAdapter(placeRecyclerAdapter);
 
-//        ListView listView = (ListView) rootView.findViewById(R.id.list);
-//
-//        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-//                Place place = places.get(position);
-//                String geoInformation = "geo:"+ place.getGeoX() + "," + place.getGeoY() + "?q=" + place.getPlaceName();
-//                Uri mUri = Uri.parse(geoInformation);
-//                Intent mIntent = new Intent(Intent.ACTION_VIEW,mUri);
-//                startActivity(mIntent);
-//            }
-//        });
-//
-//        // Inflate the layout for this fragment
-          return rootView;
+        recyclerView.setAdapter(placeRecyclerAdapter);
+        return rootView;
     }
 
     @Override
     public void onItemClick(int position) {
-        Log.d("XXXX","You are click something");
+        Place place = places.get(position);
+        String geoInformation = "geo:"+ place.getGeoX() + "," + place.getGeoY() + "?q=" + place.getPlaceName();
+        Uri mUri = Uri.parse(geoInformation);
+        Intent mIntent = new Intent(Intent.ACTION_VIEW,mUri);
+        startActivity(mIntent);
     }
 }
