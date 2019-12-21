@@ -40,6 +40,8 @@ public class MuseumsFragment extends Fragment implements PlaceRecyclerAdapter.My
 
         context = getActivity();
 
+        places.clear();
+
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         places.add(new Place(getResources().getString(R.string.smithsonian_national_air_and_space_museum),

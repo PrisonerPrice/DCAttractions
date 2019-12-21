@@ -37,6 +37,8 @@ public class ShoppingAndDinningFragment extends Fragment implements PlaceRecycle
 
         context = getActivity();
 
+        places.clear();
+
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         final ArrayList<Place> places = new ArrayList<Place>();

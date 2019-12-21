@@ -37,6 +37,8 @@ public class GreensFragment extends Fragment implements PlaceRecyclerAdapter.MyC
 
         context = getActivity();
 
+        places.clear();
+
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         final ArrayList<Place> places = new ArrayList<Place>();

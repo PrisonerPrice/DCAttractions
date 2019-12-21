@@ -39,6 +39,8 @@ public class LandmarksFragment extends Fragment implements PlaceRecyclerAdapter.
 
         context = getActivity();
 
+        places.clear();
+
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
 
         places.add(new Place(getResources().getString(R.string.white_house),
