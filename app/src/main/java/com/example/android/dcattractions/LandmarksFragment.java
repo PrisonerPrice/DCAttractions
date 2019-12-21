@@ -33,7 +33,6 @@ public class LandmarksFragment extends Fragment implements PlaceRecyclerAdapter.
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
