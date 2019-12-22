@@ -52,7 +52,7 @@ public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdap
         int color = ContextCompat.getColor(context,backgroundColorResID);
         if(data != null && data.size() != 0){
             Place place = data.get(position);
-            holder.placeImageView.setImageResource(place.getPlaceImage());
+            holder.placeNameTextView.setText(place.getPlaceName());
             holder.placeLocationTextView.setText(place.getPlaceLocation());
             Picasso.get().
                     load(place.getImageUrl()).
