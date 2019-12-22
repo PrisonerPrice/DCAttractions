@@ -25,18 +25,12 @@ public class Place {
         this.imageUrl = mImageURL;
     }
 
-    public Place(String name, String location, int imageResID, double GeoX, double GeoY){
-        mName = name;
-        mLocation = location;
-        mImageResID = imageResID;
-        mGeoX = GeoX;
-        mGeoY = GeoY;
-    }
-
-    public Place(String name, String location, int imageResID){
-        mName = name;
-        mLocation = location;
-        mImageResID = imageResID;
+    public Place(String mName, String mLocation, double mGeoX, double mGeoY, String imageUrl) {
+        this.mName = mName;
+        this.mLocation = mLocation;
+        this.mGeoX = mGeoX;
+        this.mGeoY = mGeoY;
+        this.imageUrl = imageUrl;
     }
 
     public String getPlaceName(){return  mName;}

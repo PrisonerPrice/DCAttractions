@@ -45,11 +45,12 @@ public class ShoppingAndDinningFragment extends Fragment implements PlaceRecycle
 
         places.add(new Place(getResources().getString(R.string.chinatown),
                 getResources().getString(R.string.location_chinatown),
-                R.drawable.shopping_chinatown,
-                38.899755,-77.021841));
+                38.899755,-77.021841,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Shopping/shopping_chinatown.png?raw=true"));
         places.add(new Place(getResources().getString(R.string.georgetown),
                 getResources().getString(R.string.location_georgetown),
-                R.drawable.shopping_georgetown,38.905234,-77.062820));
+                38.905234,-77.062820,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Shopping/shopping_georgetown.png?raw=true"));
 
         placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
         recyclerView = rootView.findViewById(R.id.recycler_view);

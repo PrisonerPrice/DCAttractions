@@ -45,12 +45,12 @@ public class GreensFragment extends Fragment implements PlaceRecyclerAdapter.MyC
 
         places.add(new Place(getResources().getString(R.string.national_mall),
                 getResources().getString(R.string.washington_dc),
-                R.drawable.greens_national_mall,
-                38.889663,-77.022982));
+                38.889663,-77.022982,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Greens/greens_national_mall.png?raw=true"));
         places.add(new Place(getResources().getString(R.string.tidal_basin),
                 getResources().getString(R.string.washington_dc),
-                R.drawable.greens_tidal_basin,
-                38.886449,-77.042160));
+                38.886449,-77.042160,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Greens/greens_tidal_basin.png?raw=true"));
 
         placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
         recyclerView = rootView.findViewById(R.id.recycler_view);
