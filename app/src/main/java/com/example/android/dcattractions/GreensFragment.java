@@ -25,7 +25,7 @@ public class GreensFragment extends Fragment implements PlaceRecyclerAdapter.MyC
     private static PlaceRecyclerAdapter placeRecyclerAdapter;
     private static RecyclerView recyclerView;
     private Context context;
-    private static final ArrayList<Place> places = new ArrayList<Place>();
+    private static final ArrayList<Place> places = DataUtils.getGreens();
 
     public GreensFragment() {
         // Required empty public constructor
@@ -37,20 +37,7 @@ public class GreensFragment extends Fragment implements PlaceRecyclerAdapter.MyC
 
         context = getActivity();
 
-        places.clear();
-
         View rootView = inflater.inflate(R.layout.recyclerview, container, false);
-
-        final ArrayList<Place> places = new ArrayList<Place>();
-
-        places.add(new Place(getResources().getString(R.string.national_mall),
-                getResources().getString(R.string.washington_dc),
-                38.889663,-77.022982,
-                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Greens/greens_national_mall.png?raw=true"));
-        places.add(new Place(getResources().getString(R.string.tidal_basin),
-                getResources().getString(R.string.washington_dc),
-                38.886449,-77.042160,
-                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Greens/greens_tidal_basin.png?raw=true"));
 
         placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
         recyclerView = rootView.findViewById(R.id.recycler_view);

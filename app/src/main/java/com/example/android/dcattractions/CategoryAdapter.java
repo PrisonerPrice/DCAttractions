@@ -10,6 +10,11 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     // Context of the APP
     private Context mContext;
 
+    private LandmarksFragment landmarksFragment = new LandmarksFragment();
+    private MuseumsFragment museumsFragment = new MuseumsFragment();
+    private GreensFragment greensFragment = new GreensFragment();
+    private ShoppingAndDinningFragment shoppingAndDinningFragment = new ShoppingAndDinningFragment();
+
     // context is the context of the APP
     // fm is the fragment manager that will keep each fragment's state in the adapter across swipes
     public CategoryAdapter(Context context, FragmentManager fm){
@@ -21,13 +26,13 @@ public class CategoryAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position){
         if(position == 0){
-            return new LandmarksFragment();
+            return landmarksFragment;
         } else if(position == 1){
-            return new MuseumsFragment();
+            return museumsFragment;
         } else if(position == 2){
-            return new GreensFragment();
+            return greensFragment;
         } else {
-            return new ShoppingAndDinningFragment();
+            return shoppingAndDinningFragment;
         }
     }
 
