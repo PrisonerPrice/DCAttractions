@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
 
 public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdapter.PlaceViewHolder> {
@@ -52,10 +54,12 @@ public class PlaceRecyclerAdapter extends RecyclerView.Adapter<PlaceRecyclerAdap
             Place place = data.get(position);
             holder.placeImageView.setImageResource(place.getPlaceImage());
             holder.placeLocationTextView.setText(place.getPlaceLocation());
-            holder.placeNameTextView.setText(place.getPlaceName());
+            Picasso.get().
+                    load(place.getImageUrl()).
+                    placeholder(R.drawable.map).
+                    into(holder.placeImageView);
+            Picasso.get().setLoggingEnabled(true);
             holder.relativeLayout.setBackgroundColor(color);
-        } else{
-            // need to be implemented
         }
     }
 

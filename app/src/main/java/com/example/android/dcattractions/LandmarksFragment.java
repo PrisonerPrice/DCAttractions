@@ -46,23 +46,28 @@ public class LandmarksFragment extends Fragment implements PlaceRecyclerAdapter.
         places.add(new Place(getResources().getString(R.string.white_house),
                 getResources().getString(R.string.location_white_house),
                 R.drawable.landmarks_white_house,
-                38.897510,-77.036458));
+                38.897510,-77.036458,
+                "https://github.com/PrisonerPrice/PopularMoviesApp/blob/master/Image/6BA8EE8F-72A1-4393-9332-FC06AE3500A0.JPG?raw=true"));
         places.add(new Place(getResources().getString(R.string.lincoln_memorial),
                 getResources().getString(R.string.location_lincoln_memorial),
                 R.drawable.landmarks_lincoln_memorial,
-                38.889294,-77.049702));
+                38.889294,-77.049702,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Landmarks/landmarks_lincoln_memorial.png?raw=true"));
         places.add(new Place(getResources().getString(R.string.washington_monument),
                 getResources().getString(R.string.location_washington_monument),
                 R.drawable.landmarks_washington_monument,
-                38.889509,-77.035360));
+                38.889509,-77.035360,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Landmarks/landmarks_washington_monument.png?raw=true"));
         places.add(new Place(getResources().getString(R.string.united_states_capitol),
                 getResources().getString(R.string.location_capitol),
                 R.drawable.landmarks_united_capitol,
-                38.889823,-77.010037));
+                38.889823,-77.010037,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Landmarks/landmarks_united_capitol.png?raw=true"));
         places.add(new Place(getResources().getString(R.string.thomas_jefferson_memorial),
                 getResources().getString(R.string.location_thomas_jefferson_memorial),
                 R.drawable.landmarks_thomas_jefferson_memorial,
-                38.881872,-77.036556));
+                38.881872,-77.036556,
+                "https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Landmarks/landmarks_thomas_jefferson_memorial.png?raw=true"));
 
         placeRecyclerAdapter = new PlaceRecyclerAdapter(places, this, R.color.colorPrimary, getContext());
         recyclerView = rootView.findViewById(R.id.recycler_view);
