@@ -1,4 +1,5 @@
 # DCAttractions
+![Image](https://github.com/PrisonerPrice/DCAttractions/blob/master/Images/Landmarks/landmarks_thomas_jefferson_memorial.png?raw=true)
 An Android application provides D.C. touring information utilizing Fragments and RecyclerView. You can also download this app from Google Play Store: https://play.google.com/store/apps/details?id=com.hangbo.android.dcattractions
 
 ## Techniques
